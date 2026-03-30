@@ -32,12 +32,12 @@ const social = [
   },
   {
     label: 'Facebook',
-    href: 'https://facebook.com',
+    href: 'https://facebook.com/charlene.barrientos6432',
     Icon: SocialIconFacebook,
   },
   {
     label: 'LinkedIn',
-    href: 'https://linkedin.com',
+    href: 'https://linkedin.com/in/charlene-barrientos-baa32a3a8?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
     Icon: SocialIconLinkedIn,
   },
 ]

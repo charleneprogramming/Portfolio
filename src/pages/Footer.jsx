@@ -40,7 +40,7 @@ function DownloadIcon(props) {
 
 const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/charleneprogramming', Icon: SocialIconGitHub },
-  { label: 'Facebook', href: 'https://facebook.com', Icon: SocialIconFacebook },
+  { label: 'Facebook', href: 'https://facebook.com/charlene.barrientos6432', Icon: SocialIconFacebook },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/charlene-barrientos-baa32a3a8?utm_source=share_via&utm_content=profile&utm_medium=member_ios', Icon: SocialIconLinkedIn },
 ]
 

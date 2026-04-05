@@ -64,7 +64,7 @@ export default function Navbar() {
       <button
         type="button"
         onClick={() => setIsSidebarOpen(true)}
-        className="fixed right-4 top-4 z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-primary font-serif text-xl font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.18)] transition hover:bg-primary-dark xl:hidden"
+        className="fixed right-4 top-2 z-[60] flex h-12 w-12 items-center justify-center rounded-full bg-primary font-serif text-xl font-semibold text-white shadow-[0_10px_24px_rgba(15,23,42,0.18)] transition hover:bg-primary-dark xl:hidden"
         aria-label="Open navigation menu"
         aria-expanded={isSidebarOpen}
       >

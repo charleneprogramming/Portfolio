@@ -35,31 +35,35 @@ function DevelopmentIcon(props) {
 const services = [
   {
     title: 'UI/UX Design',
-    description: 'Creating UI prototype',
+    description:
+      'Creating user-centered designs through research, wireframing, and high- & low-fidelity prototypes to ensure intuitive and engaging user experiences.',
     iconBg: 'bg-[#f4d6ff]',
     iconColor: 'text-[#c15fe5]',
     Icon: UiUxIcon,
   },
   {
-    title: 'App Design',
-    description: 'Designing mobile layouts',
+    title: 'Project Management',
+    description:
+      'Planning, organizing, and overseeing projects from concept to deployment, ensuring timely delivery, clear communication, and alignment with project goals.',
     iconBg: 'bg-[#cae4ff]',
     iconColor: 'text-[#3a99ef]',
     Icon: AppDesignIcon,
   },
   {
-    title: 'Web Design',
-    description: 'Designing website',
-    iconBg: 'bg-[#fff7b8]',
-    iconColor: 'text-[#e2d24c]',
-    Icon: WebDesignIcon,
+    title: 'Front-End Development',
+    description:
+      'Building responsive and interactive websites using modern technologies',
+    iconBg: 'bg-[#ffe3a7]',
+    iconColor: 'text-[#f0ac15]',
+    Icon: DevelopmentIcon,
   },
   {
-    title: 'Development',
-    description: 'Developing website & mobile.',
-    iconBg: 'bg-[#ffe4a7]',
-    iconColor: 'text-[#f0a81a]',
-    Icon: DevelopmentIcon,
+    title: 'App & Website Design',
+    description:
+      'Designing modern, visually appealing, and responsive interfaces for mobile and web platforms with a focus on usability and consistency.',
+    iconBg: 'bg-[#fff7b8]',
+    iconColor: 'text-[#ded24a]',
+    Icon: WebDesignIcon,
   },
 ]
 
@@ -126,7 +130,7 @@ export default function Services() {
                   cardRefs.current[index] = element
                 }}
                 data-card-index={index}
-                className={`w-full max-w-[12.25rem] rounded-[1.15rem] bg-white px-5 pb-9 pt-7 shadow-[0_10px_24px_rgba(15,23,42,0.14)] transition-all duration-700 ease-out sm:min-h-[13rem] ${
+                className={`w-full max-w-[15rem] rounded-[1.15rem] bg-white px-5 pb-8 pt-7 shadow-[0_10px_24px_rgba(15,23,42,0.14)] transition-all duration-700 ease-out sm:min-h-[15.5rem] ${
                   visibleCards.includes(index)
                     ? 'translate-y-0 opacity-100'
                     : 'translate-y-10 opacity-0'
@@ -139,10 +143,10 @@ export default function Services() {
                   <Icon className="h-5 w-5" />
                 </div>
 
-                <h3 className="mt-6 font-serif text-[1.02rem] font-semibold leading-tight text-slate-900 sm:text-[1.08rem]">
+                <h3 className="mt-6 font-serif text-[1rem] font-semibold leading-[1.1] text-slate-900 sm:text-[1.08rem]">
                   {title}
                 </h3>
-                <p className="mt-3 max-w-[9rem] font-serif text-[0.88rem] leading-[1.35] text-slate-700 sm:text-[0.95rem]">
+                <p className="mt-4 max-w-[10.3rem] font-serif text-[0.84rem] leading-[1.2] text-slate-700 sm:text-[0.89rem]">
                   {description}
                 </p>
               </article>

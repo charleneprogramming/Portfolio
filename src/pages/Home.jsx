@@ -51,11 +51,10 @@ export default function Home() {
             <span className="not-italic">I&apos;m </span>
             <span className="italic">Charlene Barrientos</span>,
             <br />
-            <span className="font-normal">UI/UX Designer</span>
+            <span className="font-normal">Project Manager</span>
           </h1>
           <p className="mt-4 max-w-[min(88vw,26rem)] px-1 font-serif text-[0.95rem] leading-relaxed text-white/80 sm:mt-5 sm:text-[1.02rem]">
-            Passionate UI/UX designer with a foundation in web development,
-            crafting seamless experiences.
+            I’m a Project Manager and UI/UX Designer with a foundation in web development, crafting seamless digital experiences.
           </p>
 
           <ul className="mt-6 flex items-center justify-center gap-4 sm:mt-7">

@@ -29,23 +29,23 @@ const experienceItems = [
 
 function TimelineRow({ title, subtitle, years }) {
   return (
-    <div className="grid gap-2 lg:grid-cols-[1fr_auto] lg:items-start lg:gap-6">
+    <div className="grid justify-items-center gap-2 text-center sm:grid-cols-[minmax(0,1fr)_max-content] sm:items-start sm:justify-items-stretch sm:gap-x-6 sm:gap-y-2 sm:text-left">
       <div className="min-w-0">
-        <div className="flex items-start gap-3">
+        <div className="flex items-start justify-center gap-3 sm:justify-start">
           <span className="mt-[0.38rem] h-2.5 w-2.5 shrink-0 rotate-45 bg-[#f7f1d8]" />
           <div className="min-w-0">
-            <h3 className="font-serif text-[1.15rem] font-semibold leading-tight text-white sm:text-[1.28rem]">
+            <h3 className="break-words font-serif text-[clamp(1rem,0.95rem+1vw,1.55rem)] font-semibold leading-[1.15] text-white">
               {title}
             </h3>
             {subtitle ? (
-              <p className="mt-1 font-serif text-[1rem] leading-snug text-white/90 sm:text-[1.08rem]">
+              <p className="mt-1 break-words font-serif text-[clamp(0.9rem,0.86rem+0.55vw,1.08rem)] leading-[1.35] text-white/90">
                 {subtitle}
               </p>
             ) : null}
           </div>
         </div>
       </div>
-      <p className="pl-[1.35rem] text-right font-serif text-[0.9rem] leading-none text-[#f3ead6] lg:pl-0 lg:pt-1">
+      <p className="font-serif text-[clamp(0.82rem,0.8rem+0.35vw,0.98rem)] leading-snug text-[#f3ead6] sm:pt-1 sm:text-right">
         {years}
       </p>
     </div>
@@ -95,7 +95,7 @@ export default function EducationExperience() {
     >
       <div className="mx-auto max-w-[70rem]">
         <div className="text-center">
-          <h2 className="font-serif text-[2.75rem] font-semibold leading-none text-primary sm:text-[3.2rem]">
+          <h2 className="font-serif text-[clamp(2rem,1.6rem+2.6vw,3.2rem)] font-semibold leading-none text-primary">
             Education & Experience
           </h2>
           <div className="mx-auto mt-3 mb-3 h-[2px] w-1/2 bg-primary/70" />
@@ -120,8 +120,8 @@ export default function EducationExperience() {
                 : 'translate-x-[18%] opacity-0'
             }`}
           >
-            <div className="max-w-[37rem]">
-              <h2 className="font-serif text-[2rem] font-medium text-white sm:text-[2.2rem]">
+            <div className="mx-auto max-w-[37rem] text-center lg:mx-0 lg:text-left">
+              <h2 className="font-serif text-[clamp(1.6rem,1.35rem+1.4vw,2.2rem)] font-medium text-white">
                 Education
               </h2>
 
@@ -138,7 +138,7 @@ export default function EducationExperience() {
 
               <div className="my-9 h-px w-full bg-white/55" />
 
-              <h2 className="font-serif text-[2rem] font-medium text-white sm:text-[2.2rem]">
+              <h2 className="font-serif text-[clamp(1.6rem,1.35rem+1.4vw,2.2rem)] font-medium text-white">
                 Experience
               </h2>
 

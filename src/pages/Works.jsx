@@ -1,4 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import donMacchiatosImage from '../assets/works/don-macchiatos-pos.png'
+import foodMenuImage from '../assets/works/foodmenu.png'
+import motoResQImage from '../assets/works/motoresq.png'
+import trackingMomentsImage from '../assets/works/tracking-moments.png'
 
 function TrackingMomentsPreview() {
   return (
@@ -85,7 +89,34 @@ function MotoResQPreview() {
   )
 }
 
-const works = [
+const designWorks = [
+  {
+    title: 'MotoResQ',
+    subtitle: 'UI/UX Design for signal immediate vehicle assistance.',
+    image: motoResQImage,
+    alt: 'MotoResQ UI screens displayed on three mobile phones.',
+  },
+  {
+    title: 'FoodMenu',
+    subtitle: 'UI/UX Design for digital food menu.',
+    image: foodMenuImage,
+    alt: 'FoodMenu mobile ordering interface shown across multiple phone screens.',
+  },
+  {
+    title: 'Tracking Moments',
+    subtitle: 'Web Design for digital journal.',
+    image: trackingMomentsImage,
+    alt: 'Tracking Moments web design preview for a digital journal.',
+  },
+  {
+    title: 'Don Macchiatos: POS',
+    subtitle: 'Web Design for Point Of Sales of Don Macchiatos',
+    image: donMacchiatosImage,
+    alt: 'Don Macchiatos point of sale web interface preview.',
+  },
+]
+
+const carouselWorks = [
   {
     title: 'Tracking Moments: Daily Journal',
     subtitle: 'UI Design, Web Development',
@@ -255,8 +286,8 @@ export default function Works() {
 
   const pages = useMemo(() => {
     const chunks = []
-    for (let index = 0; index < works.length; index += cardsPerPage) {
-      chunks.push(works.slice(index, index + cardsPerPage))
+    for (let index = 0; index < carouselWorks.length; index += cardsPerPage) {
+      chunks.push(carouselWorks.slice(index, index + cardsPerPage))
     }
     return chunks
   }, [cardsPerPage])
@@ -301,67 +332,118 @@ export default function Works() {
         </div>
 
         <div
-          className={`-mx-3 -my-3 mt-16 overflow-hidden px-3 py-3 touch-pan-y transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          className={`mt-12 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerCancel}
-          onClickCapture={handleClickCapture}
         >
-          <div
-            className="flex transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
-            style={{ transform: `translateX(-${activePage * 100}%)` }}
-          >
-            {pages.map((page, pageIndex) => (
-              <div
-                key={`page-${pageIndex}`}
-                className="grid min-w-full gap-8 px-1 md:grid-cols-2 xl:grid-cols-3"
+          <div className="px-1 text-center md:text-left">
+            <h3 className="font-serif text-[clamp(2rem,1.55rem+2.2vw,3.05rem)] font-semibold leading-none text-primary">
+              UI/UX Design
+            </h3>
+            <p className="mt-3 max-w-3xl font-serif text-[clamp(1rem,0.92rem+0.45vw,1.2rem)] leading-relaxed text-primary/75 md:mx-0">
+              I created inclusive, minimal, and future-oriented user experiences
+              to people in need.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-x-8 gap-y-12 md:grid-cols-2">
+            {designWorks.map(({ title, subtitle, image, alt }) => (
+              <article
+                key={title}
+                className="group px-1"
               >
-                {page.map(({ title, subtitle, href, Preview }) => (
-                  <a
-                    key={title}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="group overflow-hidden rounded-[1.35rem] bg-white p-3 shadow-[0_8px_18px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_22px_rgba(15,23,42,0.1)]"
-                  >
-                    <div className="h-[11.2rem] overflow-hidden rounded-[1.15rem]">
-                      <Preview />
-                    </div>
-                    <div className="px-1 pb-2 pt-5">
-                      <h3 className="font-serif text-[1.65rem] font-semibold leading-tight text-primary transition group-hover:text-primary-dark">
-                        {title}
-                      </h3>
-                      <p className="mt-3 font-serif text-[1.12rem] leading-tight text-primary/90">
-                        {subtitle}
-                      </p>
-                    </div>
-                  </a>
-                ))}
-              </div>
+                <div className="overflow-hidden rounded-[1.35rem] bg-white shadow-[0_10px_24px_rgba(15,23,42,0.12)] transition duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_16px_30px_rgba(15,23,42,0.16)]">
+                  <img
+                    src={image}
+                    alt={alt}
+                    className="aspect-[16/10] w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="pt-5 text-center md:text-left">
+                  <h4 className="font-serif text-[clamp(1.75rem,1.45rem+1vw,2.35rem)] font-semibold leading-tight text-primary">
+                    {title}
+                  </h4>
+                  <p className="mt-2 font-serif text-[clamp(1rem,0.9rem+0.35vw,1.16rem)] leading-relaxed text-primary">
+                    {subtitle}
+                  </p>
+                </div>
+              </article>
             ))}
           </div>
-        </div>
 
-        <div className="mt-14 flex items-center justify-center gap-3">
-          {pages.map((_, pageIndex) => (
-            <button
-              key={`dot-${pageIndex}`}
-              type="button"
-              onClick={() => setActivePage(pageIndex)}
-              className={`transition-all duration-300 ${
-                activePage === pageIndex
-                  ? 'h-[0.23rem] w-6 rounded-full bg-primary'
-                  : 'h-px w-4 bg-primary/35'
-              }`}
-              aria-label={`Go to works page ${pageIndex + 1}`}
-              aria-pressed={activePage === pageIndex}
-            />
-          ))}
+          <div className="mt-24">
+          <div className="px-1 text-center md:text-left">
+            <h3 className="font-serif text-[clamp(2rem,1.55rem+2.2vw,3.05rem)] font-semibold leading-none text-primary">
+              Website and Mobile Development
+            </h3>
+            <p className="mt-3 max-w-3xl font-serif mb-6 text-[clamp(1rem,0.92rem+0.45vw,1.2rem)] leading-relaxed text-primary/75 md:mx-0">
+              I created responsive and interactive websites and mobile applications.
+            </p>
+          </div>
+            <div
+              className="-mx-3 -my-3 overflow-hidden px-3 py-3 touch-pan-y"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              onPointerDown={handlePointerDown}
+              onPointerMove={handlePointerMove}
+              onPointerUp={handlePointerUp}
+              onPointerCancel={handlePointerCancel}
+              onClickCapture={handleClickCapture}
+            >
+              <div
+                className="flex transition-transform duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                style={{ transform: `translateX(-${activePage * 100}%)` }}
+              >
+                {pages.map((page, pageIndex) => (
+                  <div
+                    key={`page-${pageIndex}`}
+                    className="grid min-w-full gap-8 px-1 md:grid-cols-2 xl:grid-cols-3"
+                  >
+                    {page.map(({ title, subtitle, href, Preview }) => (
+                      <a
+                        key={title}
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="group overflow-hidden rounded-[1.35rem] bg-white p-3 shadow-[0_8px_18px_rgba(15,23,42,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_12px_22px_rgba(15,23,42,0.1)]"
+                      >
+                        <div className="h-[11.2rem] overflow-hidden rounded-[1.15rem]">
+                          <Preview />
+                        </div>
+                        <div className="px-1 pb-2 pt-5">
+                          <h3 className="font-serif text-[1.65rem] font-semibold leading-tight text-primary transition group-hover:text-primary-dark">
+                            {title}
+                          </h3>
+                          <p className="mt-3 font-serif text-[1.12rem] leading-tight text-primary/90">
+                            {subtitle}
+                          </p>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-14 flex items-center justify-center gap-3">
+              {pages.map((_, pageIndex) => (
+                <button
+                  key={`dot-${pageIndex}`}
+                  type="button"
+                  onClick={() => setActivePage(pageIndex)}
+                  className={`transition-all duration-300 ${
+                    activePage === pageIndex
+                      ? 'h-[0.23rem] w-6 rounded-full bg-primary'
+                      : 'h-px w-4 bg-primary/35'
+                  }`}
+                  aria-label={`Go to works page ${pageIndex + 1}`}
+                  aria-pressed={activePage === pageIndex}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
